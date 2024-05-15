@@ -19,13 +19,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div className="mt-12 flex items-center justify-center">
+    <div className="min-h-full flex items-center justify-center">
       {isNearTarget ? (
         <Component {...pageProps} />
       ) : (
         <div>
-          <h1 className="text-2xl font-bold">You are not in the right place</h1>
-          <p className="mt-4">-82.862755, 135.000000</p>
+          <h1 className="text-2xl font-bold">-82.862755, 135.000000</h1>
         </div>
       )}
     </div>
