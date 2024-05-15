@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       ) : (
         <div>
-          <h1 className="text-2xl font-bold">You aren't in the right place</h1>
+          <h1 className="text-2xl font-bold">You are not in the right place</h1>
           <p className="mt-4">Coordinates: 41.678440, 140.437637</p>
         </div>
       )}
