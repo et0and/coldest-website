@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { isNearCoordinates } from '../utils/geoLocation';
+import { AppProps } from 'next/app';
 import '../styles/globals.css';
 
 const targetLatitude = 41.678440;
 const targetLongitude = 140.437637;
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const [isNearTarget, setIsNearTarget] = useState(false);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       ) : (
         <div>
-          <h1 className="text-2xl font-bold">You are not in the right place</h1>
+          <h1 className="text-2xl font-bold">You aren't in the right place</h1>
           <p className="mt-4">Coordinates: 41.678440, 140.437637</p>
         </div>
       )}
