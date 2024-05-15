@@ -1,6 +1,34 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import { useEffect, useState } from 'react';
+import { isNearCoordinates } from '../utils/geoLocation';
+import '../styles/globals.css';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+const targetLatitude = 41.678440;
+const targetLongitude = 140.437637;
+
+function MyApp({ Component, pageProps }) {
+  const [isNearTarget, setIsNearTarget] = useState(false);
+
+  useEffect(() => {
+    const checkLocation = async () => {
+      const near = await isNearCoordinates(targetLatitude, targetLongitude, targetLatitude, targetLongitude);
+      setIsNearTarget(near);
+    };
+
+    checkLocation();
+  }, []);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      {isNearTarget ? (
+        <Component {...pageProps} />
+      ) : (
+        <div>
+          <h1 className="text-2xl font-bold">You aren't in the right place</h1>
+          <p className="mt-4">Coordinates: 41.678440, 140.437637</p>
+        </div>
+      )}
+    </div>
+  );
 }
+
+export default MyApp;
