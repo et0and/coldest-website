@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { isNearCoordinates } from '../utils/geoLocation';
+import { isNearCoordinates } from '../utils/geoLocation.ts';
 import { AppProps } from 'next/app';
 import '../styles/globals.css';
 
-const targetLatitude = 41.678440;
-const targetLongitude = 140.437637;
+const targetLatitude = -82.862755;
+const targetLongitude = 135.000000;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isNearTarget, setIsNearTarget] = useState(false);
@@ -19,13 +19,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="flex items-center justify-center">
       {isNearTarget ? (
         <Component {...pageProps} />
       ) : (
         <div>
           <h1 className="text-2xl font-bold">You are not in the right place</h1>
-          <p className="mt-4">Coordinates: 41.678440, 140.437637</p>
+          <p className="mt-4">-82.862755, 135.000000</p>
         </div>
       )}
     </div>

@@ -5,8 +5,6 @@ export const getCurrentPosition = (): Promise<GeolocationPosition> => {
 };
 
 export const isNearCoordinates = async (
-  latitude: number,
-  longitude: number,
   targetLatitude: number,
   targetLongitude: number,
   radius: number = 0.1 // Default radius is 0.1 degrees (around 11 km)
