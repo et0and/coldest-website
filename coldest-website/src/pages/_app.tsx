@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { isNearCoordinates } from '../utils/geoLocation.ts';
+import { isNearCoordinates } from '../utils/geoLocation';
 import { AppProps } from 'next/app';
 import '../styles/globals.css';
 
