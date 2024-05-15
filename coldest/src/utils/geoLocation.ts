@@ -13,7 +13,8 @@ export const isNearCoordinates = async (
 ): Promise<boolean> => {
   try {
     const position = await getCurrentPosition();
-    const { latitude: userLatitude, longitude: userLongitude } = position.coords;
+    const { latitude: userLatitude, longitude: userLongitude } =
+      position.coords;
 
     const distance = Math.sqrt(
       Math.pow(targetLatitude - userLatitude, 2) +

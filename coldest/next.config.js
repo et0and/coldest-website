@@ -1,9 +1,9 @@
-const path = '/coldest-website';
+const path = "/coldest-website";
 
 const csp = {
-  'script-src': [],
-  'style-src': [],
-  'font-src': [],
+  "script-src": [],
+  "style-src": [],
+  "font-src": [],
 };
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/',
+        source: "/",
         destination: path,
         basePath: false,
         permanent: true,
